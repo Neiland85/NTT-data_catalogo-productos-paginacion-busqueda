@@ -2,85 +2,86 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
     <modelVersion>4.0.0</modelVersion>
-
-
     <groupId>com.example</groupId>
-    <artifactId>catalogo-productos</artifactId>
-    <version>1.0-SNAPSHOT</version>
 
+
+    <artifactId>catalogo-productos</artifactId>
+
+
+ <version>1.0-SNAPSHOT</version>
 
     <packaging>war</packaging>
 
- <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
 
-<maven.compiler.target>1.8</maven.compiler.target>
-<failOnMissingWebXml>false</failOnMissingWebXml>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <properties>
+
+  <maven.compiler.source>1.8</maven.compiler.source>
+
+
+ <maven.compiler.target>1.8</maven.compiler.target>
+
+<failOnMissingWebXml>false</failOnMissingWebXml> <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+
 
 
  </properties>
 
-  <dependencies>
-
-
-
-
+   <dependencies>
         <dependency>
+     <groupId>javax.servlet</groupId>
 
-
-       <groupId>javax.servlet</groupId> <artifactId>javax.servlet-api</artifactId>
-
-
+ <artifactId>javax.servlet-api</artifactId>
   <version>4.0.1</version> <scope>provided</scope>
 
 
-  </dependency>
-<dependency>
-            <groupId>com.google.code.gson</groupId>
-     <artifactId>gson</artifactId>
 
-       <version>2.11.0</version>
 
  </dependency>
+
+
+
+
  <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>datatables.net</artifactId>
 
+    <groupId>com.google.code.gson</groupId>
 
-     <version>1.13.6</version>
+            <artifactId>gson</artifactId>
 
+  <version>2.11.0</version>
+ </dependency>
 
+<dependency> <groupId>org.webjars.npm</groupId>
+
+  <artifactId>datatables.net</artifactId> <version>1.13.6</version>
 
 
         </dependency>
 
- <dependency>
+        <dependency> <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
 
-    <groupId>org.webjars</groupId>
-    <artifactId>jquery</artifactId>
-    <version>[3.7.1,)</version>
-
+            <version>[3.7.1,)</version>
 
 
+ <exclusions>
 
-    <exclusions>
+   <exclusion>
+<groupId>org.webjars.npm</groupId>
 
+<artifactId>jsdom</artifactId>
 
-
-        <exclusion>
-
-
- <groupId>org.webjars.npm</groupId>
-
- <artifactId>jsdom</artifactId>
-        </exclusion>
+</exclusion>
 
 
 
+   </exclusions>
 
- </exclusions>
+
 
 
         </dependency>
@@ -91,49 +92,49 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
 
- <artifactId>junit-jupiter-api</artifactId>
-<version>5.11.3</version>
+
+ <artifactId>junit-jupiter-api</artifactId> <version>5.11.3</version>
 
 
-            <scope>test</scope>
-        </dependency>
+<scope>test</scope>
+
+</dependency>
+
+
 
 
         <dependency>
 
-
-
-
-  <groupId>org.junit.jupiter</groupId>
-
-
-
+ <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
+
+
             <version>5.11.3</version>
 
+<scope>test</scope>
 
-            <scope>test</scope>
+
 
  </dependency>
 
-
-        <dependency>
-
+       <dependency>
 
 
+ <groupId>org.json</groupId>
 
-   <groupId>org.json</groupId>
- <artifactId>json</artifactId>
+
+            <artifactId>json</artifactId>
 
 
     <version>20231013</version>
+
+
         </dependency>
 
+  </dependencies>
 
-    </dependencies>
 
-
-    <build>
+  <build>
 
 
 
@@ -141,74 +142,63 @@
         <plugins>
 
 
-
-           <plugin>
-
-
-  <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-war-plugin</artifactId>
-
-
-                <version>3.3.2</version>
-
-
-
-           </plugin>
-
        <plugin>
 
- <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId>
 
 
- <version>3.10.1</version>
-
-        <configuration>
-     <source>8</source>  <target>8</target> <release>8</release>
-
-
-   <encoding>UTF-8</encoding>
-
-<fork>true</fork>
-
-
-
-<compilerArgs>
-
-
-
-   <arg>-J-Djava.io.tmpdir=${project.build.directory}/tmp</arg>
-
-
-</compilerArgs>
+     <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-war-plugin</artifactId> <version>3.3.2</version>
 
 
 
 
- <meminitial>128m</meminitial>  <maxmem>512m</maxmem>
-
-  </configuration>
-
-
-      </plugin>
-
-
-    <plugin>
-
-
-   <groupId>org.apache.maven.plugins</groupId>
+ </plugin>
 
 
 
- <artifactId>maven-surefire-plugin</artifactId> <version>3.0.0</version>
-
-
-    </plugin>
+            <plugin>
 
 
 
-      </plugins>
+       <groupId>org.apache.maven.plugins</groupId>
+ <artifactId>maven-compiler-plugin</artifactId>
+
+    <version>3.10.1</version>
+       <configuration>
 
 
-  </build>
+                    <source>8</source>
+
+<target>8</target> <release>8</release> <encoding>UTF-8</encoding>
+
+                    <fork>true</fork> <compilerArgs>
 
 
+<arg>-J-Djava.io.tmpdir=${project.build.directory}/tmp</arg>
+
+
+ </compilerArgs>
+
+
+
+  <meminitial>128m</meminitial>
+
+        <maxmem>512m</maxmem>
+
+ </configuration>
+            </plugin> <plugin>
+
+
+                <groupId>org.apache.maven.plugins</groupId>
+
+
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+
+
+
+            </plugin>
+
+
+
+ </plugins> </build>
 </project>
