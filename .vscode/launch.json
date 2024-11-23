@@ -1,0 +1,43 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "request": "launch",
+            "name": "Launch Main Class",
+            "mainClass": "${input:mainClass}",
+            "projectName": "catalogo-productos",
+            "args": "",
+            "vmArgs": "",
+            "modulePaths": [],
+            "classPaths": [],
+            "sourcePaths": [
+              "${workspaceFolder}/src/main/java",
+              "${workspaceFolder}/src/test/java"
+            ],
+            "cwd": "${workspaceFolder}",
+            "env": {},
+            "envFile": "",
+            "stopOnEntry": false,
+            "console": "internalConsole",
+            "shortenCommandLine": "auto",
+            "stepFilters": {}
+          }
+        ],
+        "inputs": [
+          {
+            "type": "promptString",
+            "id": "mainClass",
+            "description": "Enter the fully qualified name of the main class"
+          } 
+        {
+            "type": "promptString",
+            "id": "chromeLaunch",
+            "description": "Enter the URL to launch Chrome",
+            "default": "http://localhost:8080"
+        }
+    ]
+}
