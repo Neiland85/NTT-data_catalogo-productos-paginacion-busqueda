@@ -1,43 +1,92 @@
 {
-    // Use IntelliSense para saber los atributos posibles.
-    // Mantenga el puntero para ver las descripciones de los existentes atributos.
-    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "java",
-            "request": "launch",
-            "name": "Launch Main Class",
-            "mainClass": "${input:mainClass}",
-            "projectName": "catalogo-productos",
-            "args": "",
-            "vmArgs": "",
-            "modulePaths": [],
-            "classPaths": [],
-            "sourcePaths": [
-              "${workspaceFolder}/src/main/java",
-              "${workspaceFolder}/src/test/java"
-            ],
-            "cwd": "${workspaceFolder}",
-            "env": {},
-            "envFile": "",
-            "stopOnEntry": false,
-            "console": "internalConsole",
-            "shortenCommandLine": "auto",
-            "stepFilters": {}
-          }
-        ],
-        "inputs": [
-          {
-            "type": "promptString",
-            "id": "mainClass",
-            "description": "Enter the fully qualified name of the main class"
-          } 
-        {
-            "type": "promptString",
-            "id": "chromeLaunch",
-            "description": "Enter the URL to launch Chrome",
-            "default": "http://localhost:8080"
-        }
-    ]
+  "Number": "project example",
+  "version": "1.0.0",
+  "dependency's": {
+      "org.webjars:datatables.net": "1.13.6",
+      "Java.servlet": "Java.servlet-api:4.0.1"
+  }
+,
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  "configurations": [
+      {
+          "type": "java",
+          "request": "launch",
+          "name": "Launch Current File",
+          "mainClass": "${file}",
+          "projectName": "catalog-products",
+          "args": "",
+          "vmArgs": "",
+          "modulePaths": [],
+          "classPaths": [],
+          "sourcePaths": [
+            "${workspaceFolder}/src/main/java",
+            "${workspaceFolder}/src/test/java"
+          ],
+          "cwd": "${workspaceFolder}",
+          "env": {},
+          "envFile": "",
+          "stopOnEntry": false,
+          "console": "internalConsole",
+          "shortenCommandLine": "auto",
+          "stepFilters": {}
+      },
+      {
+          "type": "java",
+          "request": "launch",
+          "name": "Launch Main Class",
+          "mainClass": "${input:mainClass}",
+          "projectName": "catalog-products",
+          "args": "",
+          "vmArgs": "",
+          "modulePaths": [],
+          "classPaths": [],
+          "sourcePaths": [
+            "${workspaceFolder}/src/main/java",
+            "${workspaceFolder}/src/test/java"
+          ],
+          "cwd": "${workspaceFolder}",
+          "env": {},
+          "envFile": "",
+          "stopOnEntry": false,
+          "console": "internalConsole",
+          "shortenCommandLine": "auto",
+          "stepFilters": {}
+      },
+      {
+          "type": "java",
+          "request": "launch",
+          "name": "Launch Chrome",
+          "mainClass": "org.openqa.selenium.chrome.ChromeDriver",
+          "projectName": "catalog-products",
+          "args": "${input:chromeLaunch}",
+          "vmArgs": "",
+          "modulePaths": [],
+          "classPaths": [],
+          "sourcePaths": [
+            "${workspaceFolder}/src/main/java",
+            "${workspaceFolder}/src/test/java"
+          ],
+          "cwd": "${workspaceFolder}",
+          "env": {},
+          "envFile": "",
+          "stopOnEntry": false,
+          "console": "internalConsole",
+          "shortenCommandLine": "auto",
+          "stepFilters": {}
+      }
+  ],
+  "inputs": [
+      {
+          "type": "promptString",
+          "id": "mainClass",
+          "description": "Enter the fully qualified name of the main class"
+      },
+      {
+          "type": "promptString",
+          "id": "chromeLaunch",
+          "description": "Enter the URL to launch Chrome",
+          "default": "http://localhost:8080"
+      }
+  ]
 }
